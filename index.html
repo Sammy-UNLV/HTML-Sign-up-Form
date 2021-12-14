@@ -14,16 +14,21 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form action="results.html" method="GET">  
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
-                
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxength="35" required>
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxength="35" required>
+                <label for="age">Your Age</label><span class="required-field">*</span>
+                <input type="number" id="age" name="age" min="21"max="120" required>
+                <h5 style="color: red;">Participants must be age 21 or older to enter this contest.</h5>
+                <label for="passcode">Your Secret Code (must be 6 alphanumeric characters).</label><span class="required-field">*</span>
+                <input type="password" id="passcode" name="passcode" pattern="[A-Za-z0-9]{6}" maxlength="6" title="6 Alphanumeric Character Passcode" required>
+
             </div>
             <fieldset>
                 <Legend>Your Contact Information</Legend>
-                <label for="email">Your Email</label>
-                <input type="text" id="email" name="email">
+                <label for="email">Your Email</label><span class="required-field">*</span>
+                <input type="text" id="email" name="email" required>
 
                 <label for="address">Your Street Address</label>
                 <input type="text" id="address" name="address">
@@ -85,7 +90,7 @@
                     <option value="WY">Wyoming</option>
                 </datalist>
                 <label for="zip">Your Zip</label>
-                <input type="text" id="zip" name="zip">
+                <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5-Digit US ZIP Code.">
 
             </fieldset>
             
@@ -137,6 +142,7 @@
                 <label for="citytour">City Tour</label>
             </div>
         </fieldset>
+        
         <br>
             <input type="submit" value="Enter the Contest">
         </form>
